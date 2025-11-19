@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sedot"
+version = "0.1.0"
+description = "CLI video scrapper for Instagram posts/reels and Threads."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "typer>=0.9",
+  "requests>=2.31",
+  "beautifulsoup4>=4.12",
+  "rich>=13.7",
+]
+
+[project.scripts]
+sedot = "sedot.cli:run"

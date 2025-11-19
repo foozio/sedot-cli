@@ -1,0 +1,46 @@
+# sedot
+
+`sedot` is a lightweight command-line video scrapper that downloads videos from public Instagram posts, reels, and Threads posts. Supply one or more URLs and sedot grabs the underlying video stream and saves it locally.
+
+## Features
+
+- Accepts either Instagram or Threads URLs.
+- Extracts video metadata via the public OpenGraph tags embedded in the post page.
+- Streams downloads with a simple progress bar.
+- Offers `--dry-run` and `--show-metadata` helpers.
+
+## Installation
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install .
+```
+
+This installs a `sedot` executable in your environment.
+
+## Usage
+
+```bash
+sedot https://www.instagram.com/p/POST_ID/
+```
+
+Download multiple URLs at once:
+
+```bash
+sedot https://www.instagram.com/reel/AAAA/ https://www.threads.net/@user/post/BBBB
+```
+
+More options:
+
+```bash
+sedot --output media --overwrite https://www.instagram.com/p/POST_ID/
+sedot --dry-run --show-metadata https://www.threads.net/@user/post/CCCC
+```
+
+## Notes & Limitations
+
+- Only public posts are supported; private or restricted posts require authentication, which sedot purposefully avoids.
+- Instagram frequently adjusts its markup. When metadata cannot be extracted, rerun later or open an issue with the failing URL.
+- Threads video delivery currently relies on the embedded OpenGraph metadata; if Meta changes this strategy, the scraper will need to be updated.

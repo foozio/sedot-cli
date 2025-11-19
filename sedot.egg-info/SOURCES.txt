@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+sedot/__init__.py
+sedot/cli.py
+sedot/downloader.py
+sedot/fetchers.py
+sedot/utils.py
+sedot.egg-info/PKG-INFO
+sedot.egg-info/SOURCES.txt
+sedot.egg-info/dependency_links.txt
+sedot.egg-info/entry_points.txt
+sedot.egg-info/requires.txt
+sedot.egg-info/top_level.txt
