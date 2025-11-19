@@ -2,8 +2,8 @@ class Sedot < Formula
   include Language::Python::Virtualenv
 
   desc "CLI video scraper for Instagram posts/reels and Threads"
-  homepage "https://github.com/yourusername/sedot-cli"
-  url "https://github.com/yourusername/sedot-cli/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https://github.com/foozio/sedot-cli"
+  url "https://github.com/foozio/sedot-cli/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "calculate_this_from_tarball"
   license "MIT"  # Assuming, check actual license
 
