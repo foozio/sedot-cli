@@ -86,7 +86,7 @@ class BaseScraper:
         for prop in ("og:video:secure_url", "og:video:url", "og:video"):
             tag = soup.find("meta", attrs={"property": prop})
             if tag and tag.get("content"):
-                return tag["content"].strip()
+                return (tag.get("content") or "").strip()
         return self._extract_from_json_ld(soup)
 
     def _extract_from_json_ld(self, soup: BeautifulSoup) -> str | None:
@@ -104,7 +104,7 @@ class BaseScraper:
     def _walk_json_for_video(self, data) -> str | None:
         if isinstance(data, dict):
             if data.get("contentUrl"):
-                return data["contentUrl"]
+                return str(data["contentUrl"])
             if data.get("video"):
                 return self._walk_json_for_video(data["video"])
             for value in data.values():
@@ -130,7 +130,7 @@ class InstagramScraper(BaseScraper):
 
 class ThreadsScraper(BaseScraper):
     platform = "threads"
-    domains = ("threads.net",)
+    domains = ("threads.net", "threads.com", "www.threads.com")
 
     def scrape(self, url: str) -> VideoMetadata:
         html = self._fetch_html(url)

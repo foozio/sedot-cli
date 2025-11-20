@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: sedot
-Version: 0.1.0
+Version: 0.1.1
 Summary: CLI video scrapper for Instagram posts/reels and Threads.
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
